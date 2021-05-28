@@ -1,0 +1,19 @@
+$STH - $DBH -> prepare( "select figure from table1 ORDER BY x LIMIT 1" );
+
+$STH -> execute();
+$result = $STH -> fetch();
+echo $result ["figure"];
+
+
+#update the first row	
+		$dataup = [
+		'matric_num' => $matric,
+		'student_tbl_id' => $tbl_id,
+		'id' => '0',
+		'status' => '1'
+		];	
+		addLimit($dataup);
+
+
+
+		"SELECT * FROM grading WHERE max >=:max AND min <=:min"
