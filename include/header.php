@@ -193,7 +193,7 @@
 						<ul class="submenu">
 							
 						<?php
-
+			
 						if(!file_exists("../uploads/passports/".$img)){
 						echo '<li><a href="uploadPassport">Upload Passport</a></li>';
 						}

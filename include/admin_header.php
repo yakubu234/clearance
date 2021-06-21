@@ -170,7 +170,7 @@
 						</a>
 					</li>
 				<?php if ($usert_type > 3 ) {
-					echo '<li class="dropdown">
+				echo'<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
 							<span class="micon fas fa-users-cog"></span><span class="mtext">Users</span>
 						</a>
@@ -180,15 +180,17 @@
 							<li><a href="logs">View Logs</a></li>
 						</ul>
 					</li>
+
 					<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon fas fa-user-tag"></span><span class="mtext">Roles</span>
+							<span class="micon fas fa-user-tag"></span><span class="mtext">Offices</span>
 						</a>
 						<ul class="submenu">
-							<li><a href="addRoles">Add Roles</a></li>
-							<li><a href="viewRoles">View Roles</a></li>
+							<li><a href="addRoles">Add Offices</a></li>
+							<li><a href="viewRoles">View Offices</a></li>
 						</ul>
 					</li>
+
 					<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
 							<span class="micon fas fa-archway"></span><span class="mtext">Departments</span>

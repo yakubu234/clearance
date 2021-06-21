@@ -70,7 +70,7 @@
 						?>				
 
 					</div>
-					<form method="post" action="authentication" autocomplete="off" >
+					<form method="post" action="authentication" autocomplete="off" id="myForm">
 						<div class="select-role">
 							<div class="btn-group btn-group-toggle" data-toggle="buttons">
 								<label class="btn active">
@@ -183,6 +183,7 @@
 <script src="vendors/scripts/core.js"></script>
 <script src="vendors/scripts/script.min.js"></script>
 <script src="vendors/scripts/process.js"></script>
+<!-- <script>document.getElementById("myForm").reset();</script> -->
 <script src="vendors/scripts/layout-settings.js"></script>
 <!-- standard js files here ended -->
 <script type="text/javascript" src="captcha.min.js"></script>

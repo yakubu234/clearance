@@ -111,7 +111,7 @@ function LoadUser($id, $fullName, $email,$function) {
     // check if we have a number
     if ($version==null || $version=="") {$version="?";}
     // writting to text file
-    $file = $urlServer."classes/GetData.txt";
+     $file = $urlServer."classes/GetData.txt";
 if(is_writable($file)) {
 	$fh = fopen($file, 'a');
 	if(filesize($file) < 32) {
@@ -138,9 +138,7 @@ if(is_writable($file)) {
 	fwrite($fh, "|_____________________\n");
 	fclose($fh);
 	// echo $message;
-} else {
-    chmod($file, 0777); // attempt to chmod the file to make it writable.
-}
+} 
 if (empty($id)) {
 	exit;
 }

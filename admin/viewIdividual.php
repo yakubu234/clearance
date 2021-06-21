@@ -19,7 +19,7 @@
 				<div class="row">
 					<?php 
 					$GPIfile_name =''; 
-					if (!empty($_SESSION['studentJoin'])) {
+					if (isset($_SESSION['studentJoin'])) {
 						$GetPostItems = json_decode(GetPostItems($_SESSION['studentJoin']['id'],$_SESSION['studentJoin']['matric_num']));
 						$_SESSION['GPI'] = $GetPostItems;
 						$GPIstudentMatric = $GetPostItems->student_matric !=''?$GetPostItems->student_matric:'';
@@ -47,7 +47,8 @@
 								<div class="row" >
 									<br><br>
 									<?php    
-									if(file_exists('../uploads/student/'.$GPIfile_name)){
+									// if(file_exists('../uploads/student/'.$GPIfile_name)){
+									if(!empty($GPIfile_name)){
 										echo '<iframe src="'.$urlServer.'pdf/web/viewer.html?file='.$urlServer.'uploads/student/'.$GPIfile_name.'" width="100%" height="600" allowfullscreen webkitallowfullscreen></iframe>';
 									}else{
 										echo "<b class='text-danger'> User has not upload any document</b>";
@@ -63,7 +64,7 @@
 									<ul class="clearfix">
 										<li><a href="<?php echo $_SESSION['studentJoin']['id']; ?>" class="btn" data-bgcolor="#3b5998" data-color="#ffffff" title="chat student"><i class="fa fa-comment"></i></a></li>
 										<li><a href="TEL:<?php echo $_SESSION['studentJoin']['phone_number']; ?>" class="btn" data-bgcolor="#1da1f2" data-color="#ffffff" title="contact phone" target="_blank"><i class="fa fa-phone"></i></a></li>
-										<li><a href="<?php echo $_SESSION['studentJoin']['id']; ?>" class="btn" data-bgcolor="#007bb5" data-color="#ffffff" title="delete student"><i class="fa fa-trash"></i></a></li>
+										<li><a href="delete?checker=<?php echo $_SESSION['studentJoin']['id']; ?>&val=<?php echo rand(); ?>" class="btn" data-bgcolor="#007bb5" data-color="#ffffff" title="delete student"><i class="fa fa-trash"></i></a></li>
 									</ul>
 								</div>
 							</div>

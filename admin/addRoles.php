@@ -26,7 +26,7 @@
 				<div class="pd-20 card-box mb-30">
 					<div class="clearfix">
 						<div class="pull-left">
-							<h4 class="text-blue h4">Add new Role</h4>
+							<h4 class="text-blue h4">Add new Offices</h4>
 							<p class="mb-30">please kindly fill in detail correctly </p>
 							<?php
 							if (isset($_SESSION['errors'])) {
@@ -41,7 +41,7 @@
 						<div class="row">
 							<div class="col-md-6 col-sm-12">
 								<div class="form-group">
-									<label>Role Name</label>
+									<label>Office(s) Name</label>
 									<input  type="text" class="form-control" placeholder="Enter role name" name="role" required="" >
 								</div>
 							</div>
@@ -63,7 +63,7 @@
 						<div class="row">
 							<div class="col-md-6 col-sm-12">
 								<div class="form-group">
-									<label>Select Role Type <span class="text-danger" >( required roles will appear when student is requesting for clearance )</span></label>
+									<label>Select Office(s) Type <span class="text-danger" >( required roles will appear when student is requesting for clearance )</span></label>
 									<select class="custom-select2 form-control" required="" name="auth" style="width: 100%; height: 38px;">
 											<option selected="" disabled="">please select</option>
 											<option value="2">Required</option>

@@ -199,13 +199,14 @@ if (isset($_POST['add_individual_student']) && $_POST['add_individual_student']=
 	$password = crypt($passwordH,$passwordH);	
 	
 	try {
-		$insert = "INSERT INTO students (username,firstname,lastname,email,matric_num,password,department,gender,phone_number,status,:img) VALUES (:username,:firstname,:lastname,:email,:matric_num,:password,:department,:gender,:phone_number,:status,:img)ON DUPLICATE KEY UPDATE matric_num = :matric_num";
-          $stmtw = $conn->prepare($insert);
+		$insert = "INSERT INTO students (username,firstname,lastname,email,matric_num,password,department,gender,phone_number,status,img) VALUES (:username,:firstname,:lastname,:email,:matric_num,:password,:department,:gender,:phone_number,:status,:img)ON DUPLICATE KEY UPDATE matric_num = :matric_num";
+        $stmtw = $conn->prepare($insert);
 		if ($stmtw->execute(['username' => $matric_num,'firstname' => $firstname,'lastname' => $lastname,'email' => $emails,'matric_num' => $matric_num,'password' => $password,'department' => $dept,'gender' => '','phone_number' => '','status' => '','img' => '']) > 0) {
 		$_SESSION['success'] = ' success!. '.$matric_num." of  ".$dept." department has been added to the student database";
 		}else{
 		$_SESSION['errors'] = ' an error has occured , please retry adding '.$matric_num." of  ".$dept." department  to the student database";
 		}
+
 		$function = "admin with name  ".$full_name." has added ".$matric_num." of  ".$dept." department to the student table" ;
 		LoadUser($userid, $full_name, $admin_email, $function);
 		$stmt = $conn->prepare('SELECT * FROM students WHERE username=? AND matric_num = ?');
@@ -215,7 +216,7 @@ if (isset($_POST['add_individual_student']) && $_POST['add_individual_student']=
 		$_SESSION['studentJoin'] = $user;
 		header('location:../admin/viewIdividual?strings='.time());
 	} catch(PDOException $e) {
-		// echo $e->getMessage();
+		// echo $e->getMessage();die;
 		$_SESSION['errors'] = ' an error has occured , please retry adding '.$matric_num." of  ".$dept." department  to the student database";
 		header('location:../admin/student.add');
 	}

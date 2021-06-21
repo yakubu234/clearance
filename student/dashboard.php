@@ -4,6 +4,7 @@
 		header('location:../index.php');
 	}
 	include 'geter.php';
+	
 	?>
 	<link rel="stylesheet" type="text/css" href="../src/plugins/datatables/css/dataTables.bootstrap4.min.css">
 	<link rel="stylesheet" type="text/css" href="../src/plugins/datatables/css/responsive.bootstrap4.min.css">
@@ -25,9 +26,11 @@
 							}
 							?>	
 						<h4 class="font-20 weight-500 mb-10 text-capitalize">
-							Welcome back <div class="weight-600 font-30 text-blue"><?php echo $firstname ." ". $lastname; ?> !</div>
+							Welcome back <div class="weight-600 font-30 text-blue"><?php echo $firstname ." ". $lastname; ?> 
+							
+							</div>
 						</h4>
-						<p class="font-18 max-width-600">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde hic non repellendus debitis iure, doloremque assumenda. Autem modi, corrupti, nobis ea iure fugiat, veniam non quaerat mollitia animi error corporis.</p>
+						<p class="font-18 max-width-600"></p>
 					</div>
 				</div>
 			</div>

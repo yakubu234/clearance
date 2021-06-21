@@ -1,4 +1,5 @@
 <?php
+
 $PData =json_decode($_SESSION["PData"]);
 $userid =  $PData->id;
 $username =  $PData->username;
@@ -11,6 +12,7 @@ $gender =  $PData->gender;
 $phone =  $PData->phone_number;
 $status =  $PData->status;
 $img =  $PData->img;
+if(empty($img)){ $img = 'wrong'; }
 
 
 function GetPostItems($userid,$matric_num){

@@ -42,11 +42,19 @@
 								<div class="form-group">
 									<label>Choose Department</label>
 									<select class="custom-select2 form-control" name="department" required="" style="width: 100%; height: 38px;">
-											<option value="">Select Department</option>
+											<option selected disabled >Select Department</option>
 											<?php 
 											if (!empty($getVal)) {											
 											foreach ($getVal as $key => $value) {
+											if(!empty($departments))
+											{
+											if($departments === $value["department"]){
 											echo '<option value="'.$value["department"].'">'.$value["department"].'</option>';
+												}
+											}else{
+											echo '<option value="'.$value["department"].'">'.$value["department"].'</option>';
+											}
+											
 											}
 											}
 											?>
