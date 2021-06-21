@@ -42,6 +42,18 @@ function GetOfficeList(){
 		}
 }
 
+function GetDepartments(){
+	global $conn;
+	try {
+			$stmt = $conn->prepare('SELECT * FROM department');
+			$stmt->execute();
+			$result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+			$user = $stmt->fetchAll();
+			return $user;			
+		} catch(PDOException $e) {
+			// echo $sql . "<br>" . $e->getMessage();die;
+		}
+}
 
 function GetUpload_Status($matric_num,$userid){
 	global $conn;

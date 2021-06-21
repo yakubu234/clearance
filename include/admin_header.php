@@ -207,14 +207,14 @@
 							<span class="micon fas fa-clipboard"></span><span class="mtext">Student Records</span>
 						</a>
 						<ul class="submenu">
-
-							<li><a href="ViewByDept">View by Dept</a></li>
-							<li><a href="viewAllStudent">View all Students</a></li>
-							<?php if ($usert_type !='3' ) {
-								echo '<li><a href="upload.excel">Upload Student Record</a></li>
-							<li><a href="student.add">Add Individual Student </a></li>';
-							} ?>
-							
+						<?php 
+						if ($usert_type > '3' ) {
+							echo '<li><a href="viewAllStudent">View all Students</a></li>';
+						}
+						?>
+						<li><a href="ViewByDept">View by Dept</a></li>
+						<li><a href="upload.excel">Upload Student Record</a></li>
+						<li><a href="student.add">Add Individual Student </a></li>							
 						</ul>
 					</li>
 					<li class="dropdown">

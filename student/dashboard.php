@@ -4,7 +4,6 @@
 		header('location:../index.php');
 	}
 	include 'geter.php';
-	
 	?>
 	<link rel="stylesheet" type="text/css" href="../src/plugins/datatables/css/dataTables.bootstrap4.min.css">
 	<link rel="stylesheet" type="text/css" href="../src/plugins/datatables/css/responsive.bootstrap4.min.css">
@@ -24,12 +23,19 @@
 							}else if(isset($_SESSION['success'])){
 								echo '<div class="alert alert-success" > '.$_SESSION['success'].'</div>';
 							}
+							if($status < 1){echo '<div class="alert alert-danger"> Kindly update your profile</div>';}
 							?>	
+							
 						<h4 class="font-20 weight-500 mb-10 text-capitalize">
 							Welcome back <div class="weight-600 font-30 text-blue"><?php echo $firstname ." ". $lastname; ?> 
 							
 							</div>
 						</h4>
+						<?php 
+						if($status < 1){
+							echo '<a href="edit.profile"><button type="button" class="btn" data-bgcolor="#007bb5" data-color="#ffffff"><i class="fas fa-user"></i> Update your Profile</button></a>';
+						}
+						?>						
 						<p class="font-18 max-width-600"></p>
 					</div>
 				</div>
