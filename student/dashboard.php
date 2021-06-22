@@ -26,8 +26,9 @@
 							if($status < 1){echo '<div class="alert alert-danger"> Kindly update your profile</div>';}
 							?>	
 							
-						<h4 class="font-20 weight-500 mb-10 text-capitalize">
-							Welcome back <div class="weight-600 font-30 text-blue"><?php echo $firstname ." ". $lastname; ?> 
+						<h4 class="font-20 weight-500 mb-10 text-capitalize"><b>
+							Welcome back <div class="weight-600 font-30 text-blue"><?php echo $firstname ." ". $lastname; ?></b> <br>
+							Congratulations on graduating! This is just the beginning; you are a star in the making. Shine on.
 							
 							</div>
 						</h4>

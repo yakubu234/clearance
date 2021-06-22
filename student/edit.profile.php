@@ -85,7 +85,12 @@
 								<div class="form-group">
 									<label>Gender</label>
 									<select class=" form-control" name="gender" required="">
-											<option value="" selected disabled>Select Gender</option>
+											<?php if(empty($gender)){
+												echo '<option value="" selected disabled>Select Gender</option>';
+											}else{
+												echo '<option value="'.$gender.'" selected disabled>'.$gender.'</option>';
+											}
+										?>
 											<option value="Male">Male</option>
 											<option value="Female">Female</option>
 									</select>

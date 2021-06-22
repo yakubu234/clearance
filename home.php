@@ -131,8 +131,8 @@
 				<div class="overlay-slider" >
 					<div class="row">
 						<div class="col-sm-7 content">
-							<h3>Grow your business globally with Playphone</h3>
-							<p>Maximize distribution and monetization by publishing your games on the leading games-only platform in emerging markets.</p>
+							<h3>Congratulations Graduate.</h3>
+							<p> You’ve worked hard to achieve your goals and now you’re on your way to seek new vistas, dream new dreams, embark on who you are, embrace life with passion and keep reaching for your star. Go for it!</p>
 						</div>
 					</div>
 				</div>
