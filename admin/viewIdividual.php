@@ -59,7 +59,7 @@
 								</div>
 
 								<div class="row" >
-									<a href="  <?php echo $urlServer.'classes/action?params=ClearStudent&data='.$_SESSION['studentJoin']['id'].'&strings='.time() ?>"><button class="btn btn-success" > Clear Student</button></a>&nbsp;
+									<a href="<?php echo $urlServer.'classes/action?params=ClearStudent&data='.$_SESSION['studentJoin']['id'].'&strings='.time().'&roler='.$role_id.'&'.time() ?>"><button class="btn btn-success" > Clear Student</button></a>&nbsp;
 									<a href="<?php echo $_SESSION['studentJoin']['id']; ?>"><button class="btn btn-danger" > Disable Request</button></a>
 									<ul class="clearfix">
 										<li><a href="<?php echo $_SESSION['studentJoin']['id']; ?>" class="btn" data-bgcolor="#3b5998" data-color="#ffffff" title="chat student"><i class="fa fa-comment"></i></a></li>

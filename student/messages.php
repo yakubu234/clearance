@@ -7,7 +7,7 @@
 		header('location:../index');
 	}
 	?>
-	<link rel="stylesheet" type="text/css" href="../../vendors/styles/style.css">
+	<link rel="stylesheet" type="text/css" href="../vendors/styles/style.css">
 	<?php include "../include/header.php"; ?>
 	<div class="main-container">
 		<div class="pd-ltr-20 xs-pd-20-10">

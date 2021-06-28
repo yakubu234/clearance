@@ -10,6 +10,74 @@
 	<link rel="stylesheet" type="text/css" href="../vendors/styles/style.css">	
 	<link rel="stylesheet" type="text/css" href="../vendors/styles/load-uploader.css">
 	<style>
+		#container-track { text-align: center; margin: 20px; }
+.bar-main-container {
+  margin: 10px auto;
+  width: 400px;
+  height: 50px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: 0.8em;
+  color: #FFF;
+}
+@media only screen and (max-width: 600px) {
+	.bar-main-container {
+  margin: 10px auto;
+  width: 350px;
+  height: 50px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: 0.8em;
+  color: #FFF;
+}
+}
+.wrap { padding: 8px; }
+
+.bar-percentage {
+  float: left;
+  background: rgba(0,0,0,0.13);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 9px 0px;
+  width: 60px;
+  height: 34px;
+}
+
+.bar-container {
+  float: right;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  height: 10px;
+  background: rgba(0,0,0,0.13);
+  width: 78%;
+  margin: 5px 0px;
+  overflow: hidden;
+}
+
+.bar {
+  float: left;
+  background: #FFF;
+  height: 100%;
+  -webkit-border-radius: 10px 0px 0px 10px;
+  -moz-border-radius: 10px 0px 0px 10px;
+  border-radius: 10px 0px 0px 10px;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  opacity: 1;
+}
+
+/* COLORS */
+.violet  { background: #048c0b; }
 		
 	</style>
 	<?php include "../include/header.php"; ?>
@@ -47,26 +115,29 @@
 								echo '<div class="alert alert-success" > '.$_SESSION['success'].'</div>';
 							}
 							?>	
-					<!--  -->
-					<div class="wrapper-progress col-md-6">
-						<br>
-						<ul class="StepProgress">
-						<?php $dataFromTrack = GetUpload_Status($matric_num,$userid); 
+					<div id="container-track" class="col-sm-6"> 					
+
+						<?php 
+						$dataFromTrack = GetUpload_Status($matric_num,$userid); 
 						$dataFromTrack = json_decode($dataFromTrack);
 						$err ='';
 						if (!empty($dataFromTrack)) {	
 							foreach ($dataFromTrack as $key => $value) {
-								$value->status == 2 ? $style ='is-done':($value->status == 1 ? $style ='current': $style ='');
-							echo '<li class="StepProgress-item '.$style.'"><strong>'.$value->roles.'</strong></li>';
+								$value->status == 2 ? $style ='101':($value->status == 1 ? $style ='56': $style ='5');
+							echo '<div id="bar-'.$key.'" class="bar-main-container violet">
+							<div class="wrap">
+							  <div class="bar-percentage" data-percentage="'.$style.'"></div>
+							 <b> '.$value->roles.'</b>
+							  <div class="bar-container">								
+								<div class="bar"></div>
+							  </div>
+							</div>
+						  </div>';
 							}
 						}else{
 							$err = "<b class='text-danger' >sorry you have not requested for clearance </b>";
 						}
-						?>							
-							<!-- <li class="StepProgress-item current"><strong>Provide feedback</strong></li>
-							<li class="StepProgress-item"><strong>Provide feedback 2</strong></li> -->
-						</ul>
-						<br>
+						?>
 					</div>
 					<?php echo $err; ?>
 					<!-- https://codepen.io/erwinquita/pen/ZWzVRE -->
@@ -76,5 +147,20 @@
 				<!-- standard js files here -->
 				<?php include "../include/footer.php";  ?>
 				<!-- standard js files here ended -->
+				<script type="text/javascript">
+				$('.bar-percentage[data-percentage]').each(function () {
+				var progress = $(this);
+				var percentage = Math.ceil($(this).attr('data-percentage'));
+				$({countNum: 0}).animate({countNum: percentage}, {
+					duration: 2000,
+					easing:'linear',
+					step: function() {
+					// What todo on every count
+					var pct = Math.floor(this.countNum) + '%';
+					progress.text(pct) && progress.siblings().children().css('width',pct);
+					}
+				});
+				});
+				</script>
 			</body>
 			</html>

@@ -233,16 +233,25 @@ if(isset($_GET['strings']) && $_GET['params']=='individualStudent'){
 		header('location:../admin/viewIdividual?strings='.time());
 }
 
-if(isset($_GET['strings']) && $_GET['params']=='ClearStudent'){
-		$Student_ID = $_GET['data'];
-
-		#select the student again
-		$stmt = $conn->prepare('SELECT * FROM students WHERE id=? ');
-		$stmt->execute([$Student_ID]);
-		$result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-		$user = $stmt->fetch();
+if(isset($_GET['strings']) && $_GET['params']=='ClearStudent'){		
+		$Student_ID = $_GET['data'];$ADMIN_ROLE_ID = $_GET['roler'];$role;
+		
+		if($role = 'Super Admin'){
+			$_SESSION['errors'] = ' OOOps!. you cannot clear student as a super admin. kindly login as an officer ';
+			header('location:../admin/viewAllStudent?strings='.time());
+		}
+		
+		# update once request is made
+		$data = [
+			'status' => '2',
+			'student_tbl_id' => $Student_ID,
+			'roles' => $role
+			];
+			$sql = "UPDATE upload_status SET status = :status WHERE roles  = :roles AND student_tbl_id = :student_tbl_id";
+			$stmtUp= $conn->prepare($sql);
+			$stmtUp->execute($data);
+		
 		$_SESSION['success'] = ' success!. student has been cleared by you ';
-		$_SESSION['studentJoin'] = $user;
 		header('location:../admin/viewIdividual?strings='.time());
 }
 

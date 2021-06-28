@@ -150,8 +150,8 @@
 				<div class="overlay-slider" >
 					<div class="row">
 						<div class=" col-sm-7 content">
-							<h3>Increase engagement with unique battle and tournament capability</h3>
-							<p>Drive more engagement for your games when players fight it out against one another in battles. When players compete, your game wins!</p>
+							<h3>Congratulations Graduate.</h3>
+							<p> You’ve worked hard to achieve your goals and now you’re on your way to seek new vistas, dream new dreams, embark on who you are, embrace life with passion and keep reaching for your star. Go for it!</p>
 						</div>
 					</div>
 				</div>
@@ -163,8 +163,8 @@
 				<div class="overlay-slider" >
 					<div class="row">
 						<div class="col-sm-7 content">
-							<h3>Launch with us in Taiwan this December and watch your revenues grow!</h3>
-							<p>Playphone has partnered with Gamania, the top game publisher in Taiwan, to help monetize your games in the #4 Android gaming market.</p>
+							<h3>Congratulations Graduate.</h3>
+							<p> You’ve worked hard to achieve your goals and now you’re on your way to seek new vistas, dream new dreams, embark on who you are, embrace life with passion and keep reaching for your star. Go for it!</p>
 						</div>
 					</div>
 				</div>
