@@ -199,7 +199,7 @@
 						if(!file_exists("../uploads/passports/".$img)){
 						echo '<li><a href="uploadPassport">Upload Passport</a></li>';
 						}
-						if (empty($status)) {
+						if ($status < 2) {
 						echo'<li><a href="uploads">Upload Documents</a></li>';
 						}
 						if(file_exists("../uploads/passports/".$img)){

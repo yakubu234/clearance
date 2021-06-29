@@ -35,9 +35,7 @@ if (!empty($_FILES) && $_FILES['img']['size'] < 410000) {
         $sql = "UPDATE students SET firstname=:firstname, lastname=:lastname, email=:email, department=:department ,gender=:gender ,phone_number=:phone_number,img=:img,status=:status WHERE id=:id AND matric_num=:matric_num";
         $stmt= $conn->prepare($sql);
         $stmt->execute($data);
-        $_SESSION['success'] = ' success!. '.$matric_num." of  ".$dept." department your profile has been updated. you can proceed to upload clearance";
-
-		
+        $_SESSION['success'] = ' success!. '.$matric_num." of  ".$dept." department your profile has been updated. you can proceed to upload clearance";		
 		$stmt = $conn->prepare('SELECT * FROM students WHERE username=? AND matric_num = ?');
 		$stmt->execute([$_POST['matric_num'], $_POST['matric_num']]);
 		$result = $stmt->setFetchMode(PDO::FETCH_ASSOC);

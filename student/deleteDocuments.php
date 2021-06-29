@@ -11,7 +11,7 @@ $ext = getExtension(pathinfo($file, PATHINFO_EXTENSION));
  if (file_exists("../uploads/student/".$file)) {
     unlink("../uploads/student/".$file);
     // echo 'File '.$img.' has been deleted';
-    $dataupdate = ['status'=> '','id'=> $userid,'matric_num'=> $matric_num];
+    $dataupdate = ['status'=> '1','id'=> $userid,'matric_num'=> $matric_num];
 	try {
 		$sql = "UPDATE students SET status = :status WHERE id  = :id AND matric_num = :matric_num";
 		$stmt= $conn->prepare($sql);

@@ -40,13 +40,13 @@
 							<div class="col-md-6 col-sm-12">
 								<div class="form-group">
 									<label>Surname</label>
-									<input  type="text" class="form-control" placeholder="Enter Surname" name="lastname" value="<?php echo $lastname;?>" required="" >
+									<input  type="text" class="form-control" placeholder="Enter Surname" name="lastname" value="<?php echo $lastname;?>" required="" readonly >
 								</div>
 							</div>
 							<div class="col-md-6 col-sm-12">
 								<div class="form-group">
 									<label>Firstname</label>
-									<input  type="text" class="form-control" placeholder="Enter firstname" name="firstname" value="<?php echo $firstname ; ?>" required="" >
+									<input  type="text" class="form-control" placeholder="Enter firstname" name="firstname" value="<?php echo $firstname ; ?>" required="" readonly >
 								</div>
 							</div>
 						</div>
@@ -60,24 +60,17 @@
 							<div class="col-md-6 col-sm-12">
 								<div class="form-group">
 									<label>email</label>
-									<input  type="email" class="form-control" placeholder="Enter email" name="email" value="<?php echo $user_email; ?>" required="" >
+									<input  type="email" class="form-control" placeholder="Enter email" name="email" value="<?php echo $user_email; ?>" required="" readonly >
 								</div>
 							</div>
 							
 						</div>
 						<div class="row">
-							<div class="col-md-6">
+
+							<div class="col-md-6 col-sm-12">
 								<div class="form-group">
-									<label>Select Department</label>
-									<select class=" form-control" name="department" required="" >
-                                            <?php
-											echo '<option value="'.$dept.'">'.$dept.'</option>';
-											
-											foreach ($GetDepartments as $key => $value) {
-												echo '<option value="'.$value["name"].'">'.$value["name"].'</option>';
-											}
-											?>
-									</select>
+									<label> Department</label>
+									<input  type="text" class="form-control" placeholder="Enter email" name="department" value="<?php echo $dept; ?>" required="" readonly >
 								</div>
 							</div>
 
