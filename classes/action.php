@@ -255,6 +255,9 @@ if(isset($_GET['strings']) && $_GET['params']=='ClearStudent'){
 		header('location:../admin/viewIdividual?strings='.time());
 }
 
+
+
+
 if (isset($_GET['strings']) && $_GET['val']=='AdEd') {
 	$adminID = $_GET['strings'];
 	$fullname = $_GET['name'];

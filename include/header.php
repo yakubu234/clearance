@@ -177,7 +177,7 @@
 					<?php
 					if($status > 0){
 						
-					if ($status >= '1') {
+					if ($status > '1') {
 					echo'
 					<li>
 						<a href="clearance" class="dropdown-toggle no-arrow">

@@ -4,7 +4,7 @@
 		$_SESSION['errors'] = "Please login first";
 		header('location:../index');
 	}
-	if ($status >= '1') {
+	if ($status > '1') {
 		$_SESSION['errors'] = "you cant upload anymore. Try delete existing upload to make new one";
 		header('location:dashboard');
 	}
