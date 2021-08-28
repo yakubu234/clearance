@@ -12,3 +12,5 @@ function base_url() {
     return url;
 }
 var base_url = base_url();
+
+new readme to add to check whatsup

@@ -25,6 +25,7 @@ class ChunkReadFilter implements \PhpOffice\PhpSpreadsheet\Reader\IReadFilter
   }
 }
 if(isset($_FILES['file'])){ 
+  // print_r($_FILES);die;
   $conn = DB();  
   $inputFileName = $_FILES['file']['tmp_name'];
   try {
